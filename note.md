@@ -4,13 +4,15 @@
 2)	可以用id和class标记div，id是唯一的，class是标记这个div的类型的。例如：所有的新闻div，class都可以为news，这样可以识别出一个类型的div。id和class都是可选的。
 ##•	${}
 1)	不指定查找范围，所以它会依序从Page、Request、Session、Application范围查找。如果途中找到了变量，就直接传回来。如果所有都找不到，就返回null。
+##  $
+1)  除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来。
 ##•	Style标签border属性 
 1)	三个参数，分别为粗细，形状，颜色
 2)	形状有四种：dotted solid double dashed
 ##•	v-cloak
 1)	使用vue框架时，页面加载会闪烁变量名，加入v-cloak指令，会解决这个问题
 2)	不需要在所有的标签上都加，只有挂载了标签添加就可以
-3)	css中
+
  
 
 2019/1/18
@@ -95,6 +97,7 @@
 8)  v-model
 9)  v-once:一次性的插值，当数据改变时，插值处的内容不会更新.
 
+
 ## 计算属性缓存 VS 方法
 1)  计算属性缓存：在computed中声名，当它该属性的依赖发生改变时，它才会重新求值，多次访问计算属性时，如果依赖没有改变，就会立刻返回之前的计算结果，而不必再次执行函数。
 2)  调用方法：在methods中声名，每次访问都会再次执行函数。
@@ -112,5 +115,63 @@
 1)  `` -> 让多行的模板更易读。
 2)  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings#%E8%AF%AD%E6%B3%95
 
-## 
+## #符号
+1)  如果值以#开始，则它将被用作选择符，并使用匹配元素的innerHTML作为模板。
+
+## clearfix
+1)  The clearfix allows a container to wrap it's floated children. Without a clearfix or equivalent styling, a container does not wrap around its floated children and collapses, just as if its floated chldren were positioned absolutely.
+2)  biezhi大牛引用答案：https://stackoverflow.com/questions/8554043/what-is-a-clearfix，answered by John Slegers
+3)  说白了，就是为了兼容老版本的ie浏览器的。
+
+2019年2月7日星期四
+## class
+1)  html元素中class属性值多个空格:就是指定多个class的意思，在HTML的层面上说的话，这样指定的class是同级的。同级的class需要看CSS文件的先后次序，后加载的css会覆盖前面加载的css。
+2)  在 HTML 中, 类名是区分大小写的。
+
+## v-show
+1)  根据条件展示元素。
+2)  不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。如过元素的display为none，就不会被显示出来在
+
+## <a>
+1)  <a> 标签的 href 属性用于指定超链接目标的 URL。
+2)  href 属性的值可以是任何**有效文档的相对或绝对 URL**，包括片段标识符和 JavaScript 代码段。如果用户选择了 <a> 标签中的内容，那么浏览器会尝试检索并显示 href 属性指定的 URL 所表示的文档，或者执行 JavaScript 表达式、方法和函数的列表。
+3)  <a> 标签中必须提供 href 属性或 name 属性。
+
+2019年2月8日星期五
+
+## 模板引擎
+1)  模板引擎是为了组件化工作的, 是为了减少重复编写某些代码而出现的.实际上模板引擎是为了实现模板文件与业务数据的结合, 实现界面与数据的分离.
+2)  为了生成一个html文件，中间有很多重复的代码，我们可以做一个模板（逻辑部分），然后用模板引擎往里面装数据，这样可以生成一个html文件。
+3)  逻辑的部分在js文件中，模板是html文件，中间有的变量需要模板引擎去置换掉。
+
+## HTML中引入js
+1)  利用<script type="text/javascript" src="js文件的路径"></script> 引入一个外部的js文件。
+2)  使用<script>标签：<script>直接在这添加js代码</script>
+3)  直接在HTML标签中插入js代码:<input name="btn" type="button" value="弹出消息框" onclick="javascript:alert('欢迎你');"/>
+
+## aria
+1)  Accessible Rich Internet Applications，规定了能够让 Web 内容和 Web 应用（特别是那些由 Ajax 和 JavaScript 开发的）对于残障人士更易使用的各种机制。
+2)  aria-hidden="true":图标的可访问性,为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 aria-hidden="true" 属性。播放到带此属性的内容时会自动跳过，以免残障人士混淆。
+
+## $.extend(){}
+1)  合并对象：函数用于将一个或多个对象的内容合并到目标对象。eg:$.extend( target [, object1 ] [, objectN ] )
+2)  方法扩展：如果target缺失那么，功能是：把对象挂载到 jQuery 的 prototype 上以扩展一个新的 jQuery 实例方法/类方法。
+
+## $()
+1)  他是document.getElementById() 方法的一个便利的简写，就像这个DOM方法一样，这个方法返回参数传入的id的那个元素。你可以传入多个id作为参数然后 $() 返回一个带有所有要求的元素的一个 Array 对象。
+2)  $("id")意思是在DOM中找到并返回id为"id"的元素，通过ID获取Element。
+
+## dropzone.js
+1)  是一个开源的 JavaScript 库，提供 AJAX 异步上传功能。
+2)  因为我们需要使用dropzone提供的一些样式，比如预览时图片样式等，这样就算手动创建，但也需要使用到dropzone样式类，那这样就会导致初始化两次，在控制台就会报错，这时候就需要在手动初始化之前设置如下代码：Dropzone.autoDiscover = false;
+
+## this.$loading.show()
+1)  他是biezhi引用的一个组件：Vue Loading Overlay Component：Vue.js component for full screen loading indicator
+2)  ![Alt text](/Users/liufanghua/Desktop/git/tale/vue-loading.jpg)
+
+## el: '#app'(vue)
+1)  el属性：把当前Vue对象挂载到 div标签上，#app是id选择器。
+2)  在实例挂载之后，元素可以用 vm.$el 访问。
+
+
 
