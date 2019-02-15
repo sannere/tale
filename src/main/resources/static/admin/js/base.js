@@ -107,13 +107,16 @@ window.axios.defaults.headers.common = {
 };
 
 $.tale.prototype.get = function (options) {
+    //如果get返回的response为fulfilled就执行then,否者执行catch
     axios.get(options.url, {
         params: options.data || {}
-    }).then(function (response) {
-        options.success && options.success(response.data)
-    }).catch(function (error) {
-        options.error && options.error(error)
-    });
+    })
+        .then(function (response) {
+            options.success && options.success(response.data)
+        })
+        .catch(function (error) {
+            options.error && options.error(error)
+        });
 };
 
 /**

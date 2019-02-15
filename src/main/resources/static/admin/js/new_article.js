@@ -39,11 +39,13 @@ var vm = new Vue({
     methods: {
         load: function () {
             var $vm = this;
-            tale.get({
+            tale.get({//大括号里面的内容作为一个对象，传给get()方法
                 url: '/admin/api/categories',
-                success: function (data) {
-                    for(item in data.payload){
-                        $vm.categories.push(data.payload[item].name);
+                success: function (data) {//data是get请求返回的response.data
+                    for(item in data.payload){//payload是response中的有效数据
+                        println("item : "item);
+                        //把响应中的payload数组中的每个item的name
+                        $vm.categories.push(data.payload[item].name);//categories是vue实例的一个数组属性
                     }
                 },
                 error: function (error) {
